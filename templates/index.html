@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App with Flask
+		</div>
+		<h2>Heart Attack prediction</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+    </div>
+    	<label for="age">Age of the person:</label>
+		<input type="age" id="age" name="age" min="25" max="100">
+	</div>
+		<label for="sex">Sex:</label>
+		<input type="sex" id="sex" name="sex" min="0" max="1">
+	</div>	
+		<label for="cp">cp-Chest pain type:</label>
+		<input type="cp" id="cp" name="cp" min="1" max="4">
+    </div>
+		<label for="trestbps">trestbps-Resting blood pressure:</label>
+		<input type="trestbps" id="trestbps" name="trestbps" min="80" max="200">
+    </div>
+		<label for="chol">chol-serum cholestoral in mg/dl:</label>
+		<input type="chol" id="chol" name="chol" min="80" max="650">
+    </div>
+		<label for="fbs">fbs-fasting blood sugar :</label>
+		<input type="fbs" id="fbs" name="fbs" min="0" max="1">
+    </div>	
+		<label for="restecg">restecg-resting electrocardiographic results:</label>
+		<input type="restecg" id="restecg" name="restecg" min="0" max="2">
+	</div>	
+		<label for="thalach">thalach-maximum heart rate achieved:</label>
+		<input type="thalach" id="thalach" name="thalach" min="80" max="200">
+    </div>
+		
+		<label for="exang">exang-exercise induced angina:</label>
+		<input type="exang" id="exang" name="exang" min="0" max="1">
+	</div>
+		
+		<label for="oldpeak">oldpeak - ST depression induced by exercise relative to rest:</label>
+		<input type="oldpeak" id="oldpeak" name="oldpeak" min="0" max="5">
+    </div>
+		
+		<label for="slope">slope-Resting blood pressure:</label>
+		<input type="slope" id="slope" name="slope" min="1" max="3">
+    </div>	
+		<label for="ca">ca number of major vessels (0-3) colored by flourosopy:</label>
+		<input type="ca" id="ca" name="ca" min="80" max="650">	
+    </div>	
+		<label for="thal">thal :</label>
+		<input type="thal" id="thal" name="fbs" min="3" max="8">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+    {% if prediction == 1%}
+	<h2 style="color:white;">Person will get heart attack</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:white;">Person will not get heart attack</h2>
+	{% endif %}
+
+ </div>
+
+
+</body>
+</html>
