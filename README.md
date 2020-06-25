@@ -28,6 +28,12 @@ In this step we finalised the models based on accuracy ,precison,recall and f1 s
 
 Here we finalized Logistic regression model since it has better accuracy ,precison,recall and f1 score values than all other models.Also we can observe less errors and cochens kappa score is 0.72 which is substantial. For deployment we have create two files like app.py and Model.pkl file is also created.
 
-Flask File creation: ● In the second file named server.py in this we have import flask ● Use @app.route(‘/’) url to execute homepage function which named as DOCTYPE.html ● Use @app.route(‘/predict’, mothods=[‘post’]) transfer data to server and provide input after that we can see the prediction using this link http://127.0.0.1:5000/
+Flask File creation: Following are the steps followed in creating Flask file:
+1)Import Flask from flask module
+2)Create an instance of the Flask class
+3)We use @app.route(‘/’)  to execute home function and @app.route(‘/predict’, methods=[POST]) to execute predict function we can find these two functions in a single index.html file
+4)After execute whole deployment code it gives link like http://127.0.0:5000 run this link to get results. 
+
+Once the deployment is done we can predict whether a person will get heart attack or not? with the help of all the features in the data set.
 
 These are the above steps are followed during this Project
